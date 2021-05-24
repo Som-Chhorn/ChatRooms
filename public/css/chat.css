@@ -52,14 +52,14 @@ p {
 }
 
 .chat-room {
-  display: none;
+  /* display: none; */
   position: fixed;
   bottom: 80px;
   right: 120px;
   height: 400px;
   width: 300px;
   background: white;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 0.7rem;
@@ -67,9 +67,9 @@ p {
   border-radius: 10px;
 }
 
-.show {
+/* .show {
   display: flex;
-}
+} */
 #chat-area {
   height: 80%;
   overflow-y: auto;

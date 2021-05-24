@@ -1,24 +1,25 @@
 let express = require("express");
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log("listening on PORT !" + PORT);
 });
 
-let fruits = ["banana", "apple"];
-
-app.get("/fruits", (req, res) => {
-  res.send(fruits);
-});
-
-app.get("/addFruit", (req, res) => {
-  let fruitName = req.query.name;
-  fruits.push(fruitName);
-
-  console.log(fruits);
-  res.send(fruits);
-});
-
-
 app.use(express.static("public"));
+
+let Data = [];
+
+
+app.post("/fruits",(request, response) => {
+  let fruitName = request.body;
+  Data.push(fruitName);
+  console.log(Data);
+
+  response.send(Data);
+});
+
+app.get("/fruits", (request,response) => {
+  response.send(Data);
+});
+
