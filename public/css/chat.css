@@ -27,10 +27,22 @@ h1 {
   margin-bottom: 2rem;
 }
 
-p {
-  font-size: 2rem;
+.sms{
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  box-shadow: 0 5px 5px black;
+  color: white;
+  padding: 15px;
+  margin: 12px;
+  width: auto;
+  height: auto;
+  background: rgb(7, 127, 197);
+  border-radius: 10px 10px 0px 10px;
 }
-
+.name{
+  list-style: none;
+}
 .chat-btn {
   position: fixed;
   right: 50px;

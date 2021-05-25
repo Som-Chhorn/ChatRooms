@@ -1,41 +1,39 @@
-
-let url = "http://192.168.88.8:3000/fruits";
-
-function sendMessage(event){
- 
-  let messages = {message:messageInput.value};
+function displayInfo(res) {
+  let users = res.data;
+  console.log(users);
+  let list = document.querySelector('.list_message');
+  if(list !== null){
+    list.remove();
+  }
+  list = document.createElement('div');
+  for(user of users){
+    let li = document.createElement('li');
+    li.className = 'name';
+    // li.textContent = user.name;
+    let sms = document.createElement('p');
+    sms.className = 'sms';
+    sms.textContent = user.text;
   
-  axios.post(url, messages).then((response)=>{
-    refreshMessages(response.data);
-    console.log(response.data);
-  })
- 
+    list.appendChild(li);
+    list.appendChild(sms);
+    list_message.appendChild(list);
+  }
 }
 
+function addText() {
+  
+  let users = {name: "Iphone", text: messages.value}
+  axios.post(url, users).then(displayInfo);
+  messages.value = '';
 
-function loadData(){
-  axios.get(url).then((response)=>{
-    refreshMessages(response.data);
-  })
-};
+}
 
-function refreshMessages(valueMessage) {
-  // console.log(valueMessage);
-};
-// add button show and hide of chat
-const chatRoom = document.querySelector(".chat-room");
-const chatBtn = document.querySelector(".chat-btn");
-
-let messageInput = document.querySelector('#input');
+const url = "http://localhost:5000/users";
+axios.get(url).then(displayInfo)
 
 
-// chatBtn.addEventListener("click", () => {
-//   chatRoom.classList.toggle("show");
-// });
+let messages = document.getElementById("input");
+let list_message = document.querySelector('.contain-message');
 
-// Submit
-const submitBtn = document.querySelector(".submit");
-submitBtn.addEventListener("click", sendMessage);
-
-
-loadData();
+const btnAdd = document.querySelector('.submit');
+btnAdd.addEventListener('click', addText);
