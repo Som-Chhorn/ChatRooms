@@ -1,25 +1,17 @@
-let express = require("express");
+
+const express = require('express');
 const app = express();
-const PORT = 5000;
 
-app.listen(PORT, () => {
-  console.log("listening on PORT !" + PORT);
-});
-
+app.listen(process.env.PORT || 5000);
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.static("public"));
+let users = [];
+app.get('/users', (req, res) => res.send(users))
 
-let Data = [];
 
-
-app.post("/fruits",(request, response) => {
-  let fruitName = request.body;
-  Data.push(fruitName);
-  console.log(Data);
-
-  response.send(Data);
-});
-
-app.get("/fruits", (request,response) => {
-  response.send(Data);
-});
-
+app.post('/users', (req, res) =>{
+    let username = req.body;
+    users.push(username);
+    res.send(users);
+})

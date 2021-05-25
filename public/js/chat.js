@@ -1,39 +1,46 @@
+
+// add button show and hide of chat
+const chatRoom = document.querySelector(".chat-room");
+const chatBtn = document.querySelector(".chat-btn");
+const chatArea = document.querySelector('#chat-area')
+chatBtn.addEventListener("click", () => {
+  chatRoom.classList.toggle("show");
+});
+
+// Submit
 function displayInfo(res) {
   let users = res.data;
-  console.log(users);
-  let list = document.querySelector('.list_message');
-  if(list !== null){
-    list.remove();
-  }
-  list = document.createElement('div');
+  let list = document.querySelector('ul');
+  if (list !== null) list.remove();
+  const ul = document.createElement('ul');
   for(user of users){
-    let li = document.createElement('li');
-    li.className = 'name';
-    // li.textContent = user.name;
-    let sms = document.createElement('p');
-    sms.className = 'sms';
-    sms.textContent = user.text;
-  
-    list.appendChild(li);
-    list.appendChild(sms);
-    list_message.appendChild(list);
+    let img = document.createElement('img');
+    img.src = "img/image12.jpg"
+    img.className = "avatar";
+    ul.appendChild(img);
+    chatArea.appendChild(img);
+
+    let div = document.createElement('div');
+    div.textContent = user.name + " : " + user.text;
+    div.className = "sms";
+    ul.appendChild(div);
+    chatArea.appendChild(div);
+
+
   }
 }
 
 function addText() {
   
-  let users = {name: "Iphone", text: messages.value}
-  axios.post(url, users).then(displayInfo);
-  messages.value = '';
+  let user = {name: "sindy", text: text.value};
+  axios.post(url, user).then(displayInfo);
 
 }
 
+let text = document.querySelector("#input");
+
 const url = "http://localhost:5000/users";
 axios.get(url).then(displayInfo)
-
-
-let messages = document.getElementById("input");
-let list_message = document.querySelector('.contain-message');
 
 const btnAdd = document.querySelector('.submit');
 btnAdd.addEventListener('click', addText);
