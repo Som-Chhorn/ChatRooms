@@ -1,7 +1,7 @@
 // Submit
 // note this code has been refactored by ronan
 const PORT = 5000;
-const IP = "192.168.88.11";
+const IP = "192.168.88.27";
 const GET_URL = "http://" + IP + ":" + PORT + "/messages";
 const POST_URL = "http://" + IP + ":" + PORT + "/message";
 
@@ -12,23 +12,29 @@ function displayInfo(messages) {
   }
   chatMessages = document.createElement("div");
   chatMessages.id = "chat-messages";
-  chatArea.appendChild(chatMessages);
+ 
 
   for (message of messages) {
     let img = document.createElement("img");
     img.src = "img/image12.jpg";
     img.className = "picture";
-    chatArea.appendChild(img);
+    chatMessages.appendChild(img);
+    
 
     let text = document.createElement("div");
     text.className = "sms";
     text.textContent = message.username + " : " + message.text;
-    chatArea.appendChild(text);
+    
+
+    chatArea.appendChild(chatMessages);
+    chatMessages.appendChild(text);
+
+   
   }
 }
 
 function addText() {
-  let postBody = { username: "JavaScript", text: messageInput.value };
+  let postBody = { username: "Bro KH", text: messageInput.value };
   axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
   messageInput.value = "";
 }

@@ -31,6 +31,10 @@ p {
   font-size: 2rem;
 }
 
+#chat-messages{
+  padding: 10px;
+}
+
 .chat-btn {
   position: fixed;
   right: 50px;
@@ -94,7 +98,7 @@ p {
   border-radius: 5px;
   margin: 5px;
   width: auto;
-  height: 30px;
+ 
   text-align: start;
   font-size: 20px;
   margin-left: 0.5rem;
