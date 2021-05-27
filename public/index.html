@@ -2,35 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat rooms</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
-    />
+    <title>login</title>
     <link rel="stylesheet" href="css/chat.css" />
-    <script src="js/chat.js" defer></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
   </head>
   <body>
-    <div class="container">
-      <h1>Chat rooms</h1>
-      <p>Click on the chat botton to start chating</p>
-      <button class="chat-btn">
-        <i class="material-icons"> comment </i>
-      </button>
-      <div class="chat-room">
-        <div class="badge">1</div>
-
-        <div id="chat-area"></div>
-
-        <div class="input-area">
-          <input type="text" id="messageInput" />
-          <button id="emoji-btn">&#127773;</button>
-          <button class="submit"><li class="material-icons">send</li></button>
+    <div class="container1">
+      <div class="main">
+        <div class="titleChat">
+          <h1 class="chat1">Chat</h1>
+          <h1 class="room1">Rooms</h1>
+          <br /><br />
+          <form action="#">
+            <div class="data1">
+              <label>Name</label>
+              <input type="text" required />
+            </div>
+            <div class="data1">
+              <label>Password</label>
+              <input type="password" required />
+            </div>
+            <div class="login">
+              <button class="in">
+                <a href="message.html" class="logIn">LOG IN</a>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 // Submit
 // note this code has been refactored by ronan
 const PORT = 5000;
-const IP = "192.168.88.27";
+const IP = "192.168.43.68";
 const GET_URL = "http://" + IP + ":" + PORT + "/messages";
 const POST_URL = "http://" + IP + ":" + PORT + "/message";
 
@@ -37,6 +37,7 @@ function addText() {
   let postBody = { username: "Bro KH", text: messageInput.value };
   axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
   messageInput.value = "";
+  
 }
 
 function loadData() {
@@ -52,3 +53,4 @@ const chatArea = document.querySelector("#chat-area");
 chatBtn.addEventListener("click", () => chatRoom.classList.toggle("show"));
 
 loadData();
+setInterval(loadData, 5000);

@@ -80,37 +80,24 @@ p {
   overflow-x: hidden;
 }
 
-.income-sms {
-  display: flex;
-  align-items: center;
-}
+
 .picture {
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%;
   object-fit: over;
   margin-right: 200px;
 }
 .sms {
-  background-color: dodgerblue;
+  background-color: rgb(18, 131, 116);
   color: white;
   padding: 10grem;
-  border-radius: 5px;
+  border-radius: 7px;
   margin: 5px;
   width: auto;
- 
+  height: auto;
   text-align: start;
-  font-size: 20px;
-  margin-left: 0.5rem;
-  box-shadow: 0 2px 3px black;
-}
-.income-sms .sms {
-  background-color: dodgerblue;
-  color: white;
-  padding: 10grem;
-  font-size: -10px;
-  margin: 10px;
-  border-radius: 5px;
+  font-size: 22px;
   margin-left: 0.5rem;
   box-shadow: 0 2px 3px black;
 }
@@ -178,4 +165,99 @@ input[type="text"] {
   background-color: rgb(185, 185, 185);
   border-radius: 15px;
   box-shadow: 0 2px 3px black;
+}
+
+
+/* Login style */
+
+.container1{
+  font-family: sans-serif;
+  background-color: rgb(248, 107, 126);
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  width: 50%;
+}
+.main{
+  width: 90vh;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.titleChat{
+  background: hsl(163, 55%, 16%);
+  width: 80vh;
+  height: 40vh;
+  margin-top:30px ;
+}
+
+.chat1{
+  margin: 20px;
+  color: white;
+  margin-left: 20px;
+  font-family: serif;
+}
+.room1{
+  margin-top: 0px;
+  color: white;
+  margin-left: 200px;
+  font-family: serif;
+}
+
+.login{
+  width: 80vh;
+  height: 40vh;
+  margin-top:30px;
+
+}
+.para{
+  text-align: end;
+  margin-right: 20px;
+}
+.newAcc{
+  background: rgb(75, 73, 73);
+  width: 80vh;
+  height: 40px;
+  margin-top: 1px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.new{
+  color: aqua;
+  padding: 10px;
+}
+.in{
+  background: rgb(75, 73, 73);
+  width: 80vh;
+  height: 40px;
+  margin-top: 1px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.logIn{
+  color: aqua;
+  padding: 10px;
+  text-decoration: none;
+
+}
+
+form .data1 label{
+  font-size: 18px;
+}
+form .data1 input{
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid silver;
+}
+form .data1 input:focus{
+  border-color: #3498db;
+  border-bottom-width: 2px;
 }
