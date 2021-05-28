@@ -34,7 +34,7 @@ function displayInfo(messages) {
 }
 
 function addText() {
-  let postBody = { username: "Bro KH", text: messageInput.value };
+  let postBody = { username: "COVID", text: messageInput.value };
   axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
   messageInput.value = "";
   

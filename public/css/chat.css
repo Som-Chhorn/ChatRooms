@@ -187,7 +187,7 @@ input[type="text"] {
 }
 
 .titleChat{
-  background: hsl(163, 55%, 16%);
+  background: hsl(155, 92%, 48%);
   width: 80vh;
   height: 40vh;
   margin-top:30px ;
@@ -201,7 +201,7 @@ input[type="text"] {
 }
 .room1{
   margin-top: 0px;
-  color: white;
+  color: rgb(21, 27, 29);
   margin-left: 200px;
   font-family: serif;
 }
@@ -240,7 +240,7 @@ input[type="text"] {
   justify-content: center;
   cursor: pointer;
 }
-.logIn{
+#btn_login{
   color: aqua;
   padding: 10px;
   text-decoration: none;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/chat.css" />
     
   </head>
@@ -17,16 +18,16 @@
           <br /><br />
           <form action="#">
             <div class="data1">
-              <label>Name</label>
-              <input type="text" required />
+              <label for="user">Username:</label>
+              <input type="text" required id="user"/>
             </div>
             <div class="data1">
-              <label>Password</label>
-              <input type="password" required />
+              <label for="pwd">Password:</label>
+              <input type="password" required id ="pwd" />
             </div>
             <div class="login">
               <button class="in">
-                <a href="message.html" class="logIn">LOG IN</a>
+                <a id="btn_login">LOG IN</a>
               </button>
             </div>
           </form>

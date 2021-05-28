@@ -8,7 +8,11 @@ app.use(express.static("public"));
 
 // List of messages
 // Each message has a user name and message text
-let messages = [];
+let messages = [
+  {id: 1, name: "som", password: "222", color: "color-red"},
+  {id: 1, name: "sokha", password: "222", color: "color-blue"},
+  {id: 1, name: "trea", password: "222", color: "color-orange"}
+];
 
 app.get("/messages", (req, res) => res.send(messages));
 
