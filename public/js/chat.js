@@ -2,7 +2,7 @@
 // note this code has been refactored by ronan
 const PORT = 5000;
 const IP = "192.168.43.68";
-const GET_URL = "http://" + IP + ":" + PORT + "/messages";
+const GET_URL = "http://" + IP + ":" + PORT + "/login";
 const POST_URL = "http://" + IP + ":" + PORT + "/message";
 
 function displayInfo(messages) {
@@ -34,9 +34,11 @@ function displayInfo(messages) {
 }
 
 function addText() {
-  let postBody = { username: "COVID", text: messageInput.value };
-  axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
-  messageInput.value = "";
+  if (messageInput.value !== "") {
+    let postBody = { username: "COVID", text: messageInput.value };
+    axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
+    messageInput.value = "";
+  }
   
 }
 
@@ -52,5 +54,4 @@ const chatBtn = document.querySelector(".chat-btn");
 const chatArea = document.querySelector("#chat-area");
 chatBtn.addEventListener("click", () => chatRoom.classList.toggle("show"));
 
-loadData();
 setInterval(loadData, 5000);

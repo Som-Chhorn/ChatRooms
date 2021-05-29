@@ -14,7 +14,7 @@ let messages = [
   {id: 1, name: "trea", password: "222", color: "color-orange"}
 ];
 
-app.get("/messages", (req, res) => res.send(messages));
+app.get("/login", (req, res) => res.send(messages));
 
 app.post("/message", (req, res) => {
   let message = { username: req.body.username, text: req.body.text };

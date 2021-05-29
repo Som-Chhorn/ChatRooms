@@ -1,27 +1,24 @@
 
+const rootEndPoint = "http://192.168.43.68:5000"
 
-let loginProcess = (response, username, pass) =>{
+let loginProcess = (response) =>{
     let messages = response.data; 
     for(let user of messages){
-        if (user.name === username && user.password === pass){
-            window.location.href = rootEndPoint + "../message.html"
-        }else{
-            console.log("No")
+        console.log(user)
+        if (user.name === username.value && user.password === password.value){
+            window.location.href = "message.html";
         }
     }
 }
 
-
+let username = document.querySelector('#user');
+let password = document.querySelector('#pwd');
 let login = (e) =>{
-    let username = document.querySelector('#user').value;
-    let password = document.querySelector('#pwd').value;
-    const url = rootEndPoint + '/messages';
-    axios
-    .get(url)
-    .then(res => loginProcess(res, username, password))
+    const GET_URL = rootEndPoint + '/login';
+    axios.get(GET_URL).then(loginProcess);
 }
 
 
 const btnLogin = document.querySelector('#btn_login');
-const rootEndPoint = "http://localhost:5000/messages"
+
 btnLogin.addEventListener('click', login);
