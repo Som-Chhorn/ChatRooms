@@ -8,16 +8,18 @@ app.use(express.static("public"));
 
 // List of messages
 // Each message has a user name and message text
-let messages = [
+let users = [
   {id: 1, name: "som", password: "222", color: "color-red"},
-  {id: 1, name: "sokha", password: "222", color: "color-blue"},
+  {id: 1, name: "sokha", password: "333", color: "color-blue"},
   {id: 1, name: "trea", password: "222", color: "color-orange"}
 ];
 
-app.get("/login", (req, res) => res.send(messages));
+let messages = [];
+
+app.get("/login", (req, res) => res.send(users));
 
 app.post("/message", (req, res) => {
   let message = { username: req.body.username, text: req.body.text };
-  messages.push(message);
-  res.send(messages);
+  users.push(message);
+  res.send(users);
 });

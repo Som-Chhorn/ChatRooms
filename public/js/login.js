@@ -1,16 +1,15 @@
-
-const rootEndPoint = "http://192.168.43.68:5000"
-
+const rootEndPoint = "http://192.168.88.8:5000"
 let loginProcess = (response) =>{
-    let messages = response.data; 
-    for(let user of messages){
-        console.log(user)
+    let users = response.data; 
+    for(let user of users){
         if (user.name === username.value && user.password === password.value){
             window.location.href = "message.html";
+            localStorage.setItem('username', user.name);
+            localStorage.setItem('color', user.name);
         }
     }
 }
-
+// call user and pwd
 let username = document.querySelector('#user');
 let password = document.querySelector('#pwd');
 let login = (e) =>{
@@ -18,7 +17,7 @@ let login = (e) =>{
     axios.get(GET_URL).then(loginProcess);
 }
 
-
+// call button 
 const btnLogin = document.querySelector('#btn_login');
 
 btnLogin.addEventListener('click', login);

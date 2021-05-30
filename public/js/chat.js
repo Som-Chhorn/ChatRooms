@@ -1,11 +1,11 @@
 // Submit
 // note this code has been refactored by ronan
 const PORT = 5000;
-const IP = "192.168.43.68";
+const IP = "192.168.88.8";
 const GET_URL = "http://" + IP + ":" + PORT + "/login";
 const POST_URL = "http://" + IP + ":" + PORT + "/message";
 
-function displayInfo(messages) {
+function displayInfo(users) {
   let chatMessages = document.querySelector("#chat-messages");
   if (chatMessages !== null) {
     chatMessages.remove();
@@ -14,9 +14,9 @@ function displayInfo(messages) {
   chatMessages.id = "chat-messages";
  
 
-  for (message of messages) {
+  for (message of users) {
     let img = document.createElement("img");
-    img.src = "img/image12.jpg";
+    img.src = "img/image1.jpg";
     img.className = "picture";
     chatMessages.appendChild(img);
     
@@ -36,6 +36,7 @@ function displayInfo(messages) {
 function addText() {
   if (messageInput.value !== "") {
     let postBody = { username: "COVID", text: messageInput.value };
+    // post and create function displayInfo
     axios.post(POST_URL, postBody).then((res) => displayInfo(res.data));
     messageInput.value = "";
   }
